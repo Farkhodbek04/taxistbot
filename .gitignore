@@ -43,3 +43,4 @@ docker-compose.override.yml
 *~
 
 tempCodeRunnerFile.py
+config.json
