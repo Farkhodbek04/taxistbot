@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  taxi_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taxi_bot
+    volumes:
+      - ./config.json:/app/config.json
+      - ./taxi_bot.log:/app/taxi_bot.log
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "pgrep", "python"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s

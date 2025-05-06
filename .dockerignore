@@ -1,0 +1,46 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+
+# Logs
+*.log
+taxi_bot.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Docker
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Misc
+*.md
+*.bak
+*.swp
+*~
+
+# Local development
+tests/
+docs/
