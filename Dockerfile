@@ -12,7 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY taxi_bot.py .
-COPY .env .
 COPY config.json .
 
 # Set environment variables
