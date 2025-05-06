@@ -6,7 +6,7 @@ services:
     container_name: taxi_bot
     volumes:
       - ./config.json:/app/config.json
-      - ./taxi_bot.log:/app/taxi_bot.log
+      - ./logs:/app/logs
       - ./.env:/app/.env
     environment:
       - PYTHONUNBUFFERED=1

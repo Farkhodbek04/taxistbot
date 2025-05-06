@@ -16,6 +16,11 @@ from telegram.ext import (
 )
 import httpx
 
+# Ensure log directory exists
+LOG_DIR = "/app/logs"
+LOG_FILE = os.path.join(LOG_DIR, "taxi_bot.log")
+os.makedirs(LOG_DIR, exist_ok=True)
+
 # Custom handler for taxi_bot.log to capture only __main__ ERROR logs
 class MainErrorOnlyHandler(logging.FileHandler):
     def emit(self, record):
@@ -28,7 +33,7 @@ logging.basicConfig(
     level=logging.DEBUG,  # Capture all levels for console
     handlers=[
         logging.StreamHandler(),  # Console output for all levels
-        MainErrorOnlyHandler("taxi_bot.log")  # File output for __main__ ERROR only
+        MainErrorOnlyHandler(LOG_FILE)  # File output for __main__ ERROR only
     ]
 )
 logger = logging.getLogger(__name__)
